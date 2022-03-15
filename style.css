@@ -118,10 +118,9 @@ body {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   display: flex;
-  height: 100%;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
   margin: 3rem 0;
 }
 
@@ -140,13 +139,12 @@ body {
 .player2 {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
   margin: 3rem 0;
 }
+
 .p2-overlay {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
@@ -244,7 +242,7 @@ body {
     grid-template-rows: 1fr 1fr;
     grid-gap: 2rem;
     width: 75%;
-    margin: 0;
+    margin: 3rem 2rem;
   }
 
   .player1 {
@@ -255,6 +253,8 @@ body {
   .p1-overlay {
     grid-column: 1 / 1;
     grid-row: 1 / 2;
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: 0rem;
   }
 
   .player2 {
@@ -265,6 +265,8 @@ body {
   .p2-overlay {
     grid-column: 1 / 1;
     grid-row: 2 / 3;
+    border-top-right-radius: 0rem;
+    border-bottom-left-radius: 0.5rem;
   }
 
   .dice {
@@ -293,8 +295,7 @@ body {
 
 @media (max-width: 660px) {
   .game-window {
-    width: 100%;
-    margin-bottom: 0;
+    margin: 0rem;
   }
   .game-info-btns {
     margin-left: auto;
@@ -302,5 +303,44 @@ body {
   }
   .how-to-play {
     width: 70%;
+  }
+}
+
+@media (max-width: 500px) {
+  .game-window {
+    margin: 0rem;
+  }
+
+  .player1 h1,
+  .player2 h1 {
+    font-size: 1.5rem;
+  }
+
+  .player1 span,
+  .player2 span {
+    font-size: 1.5rem;
+  }
+  .game-btn button {
+    font-size: 0.8rem;
+    width: 8rem;
+  }
+  .current {
+    width: 10rem;
+    font-size: 0.8rem;
+  }
+  .current span {
+    font-size: 1rem;
+  }
+
+  .game-info-btns {
+    margin-left: 10rem;
+  }
+
+  .new-game {
+    font-size: 0.6rem;
+  }
+
+  .how-to-play {
+    height: fit-content;
   }
 }
