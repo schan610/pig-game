@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pig Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Game Title  -->
+    <div class="container">
+      <div class="game-title">
+        <h1>PIG GAME</h1>
+      </div>
+      <div class="game-info-btns">
+        <button type="button" class="new-game">🔁 NEW GAME</button>
+        <button type="button" class="how-btn">?</button>
+      </div>
+
+      <!--  How to Play Modal -->
+      <div class="how-to-play hidden">
+        <p>
+          Player 1 starts first. Each player take turns to roll a single dice as
+          many times as they wish, adding all roll results to a running total.
+          However if the player rolls a 1, they lose their gained score. Press
+          the hold button to stop rolling the dice. First player to 100 points
+          wins!
+        </p>
+        <button class="close-how">Ok</button>
+      </div>
+      <div class="how-overlay hidden"></div>
+      <!-- Main Game Window -->
+      <div class="game-window">
+        <!-- Player 1 -->
+        <div class="p1-overlay overlay-active"></div>
+        <div class="player1">
+          <h1 class="player1-message">PLAYER 1</h1>
+          <div class="score-wrapper">
+            <span class="p1-score">0</span>
+          </div>
+          <div class="current">
+            <p>CURRENT</p>
+            <p><span class="p1-current-hold">0</span></p>
+          </div>
+          <div class="game-btn">
+            <button type="button" class="p1-roll">🎲 ROLL DICE</button>
+            <button type="button" class="p1-hold">📥 HOLD</button>
+          </div>
+        </div>
+        <div class="dice hidden">
+          <img src="images/dice1.png" id="diceImg" alt="dice" />
+        </div>
+        <!-- Player 2 -->
+        <div class="p2-overlay show-me"></div>
+        <div class="player2">
+          <h1 class="player2-message">PLAYER 2</h1>
+          <div class="score-wrapper">
+            <span class="p2-score">0</span>
+          </div>
+          <div class="current">
+            <p>CURRENT</p>
+            <p><span class="p2-current-hold">0</span></p>
+          </div>
+          <div class="game-btn">
+            <button type="button" class="p2-roll">🎲 ROLL DICE</button>
+            <button type="button" class="p2-hold">📥 HOLD</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

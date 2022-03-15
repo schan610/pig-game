@@ -1,0 +1,306 @@
+html {
+  height: 100vh;
+  background: linear-gradient(to top left, #174e86, #97e4f4);
+  background-attachment: fixed;
+}
+body {
+  margin: 0;
+}
+/* Game Info */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content min-content 1fr;
+  align-content: center;
+  justify-items: center;
+}
+.game-title {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  position: relative;
+  text-align: center;
+  margin: 0;
+}
+.game-title h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: #eee;
+  font-size: 2.5rem;
+  text-align: center;
+}
+.game-info-btns {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  margin-left: 44rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+}
+.how-btn {
+  margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-color: #eee;
+  background-color: rgba(191, 184, 191, 0.68);
+  color: #eee;
+  cursor: pointer;
+}
+
+.new-game {
+  font-family: 'Montserrat', sans-serif;
+  width: 8rem;
+  padding: 0.5rem;
+  border-radius: 1.5rem;
+  border-color: #fff;
+  box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.5);
+  background: #eee;
+  cursor: pointer;
+}
+
+/* How to Play Modal */
+.how-to-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 10rem;
+  width: 28rem;
+  background-color: #eee;
+  padding: 2rem;
+  box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.5);
+  border-radius: 2rem;
+  border-color: #d3d3d3;
+  z-index: 4;
+}
+
+.how-to-play p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #000000;
+}
+
+.how-to-play button {
+  font-family: 'Montserrat', sans-serif;
+  color: #000000;
+  float: right;
+  background-color: rgba(236, 232, 236, 0.68);
+  cursor: pointer;
+}
+
+.how-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 3;
+}
+
+/* Main Game */
+.game-window {
+  grid-row: 3 / 4;
+  position: relative;
+  align-self: auto;
+  width: 55rem;
+  border-radius: 0.5rem;
+  background-color: #e8749a;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #eee;
+  margin-bottom: 2rem;
+}
+
+.player1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 3rem 0;
+}
+
+.score-wrapper {
+  font-size: 3rem;
+}
+.p1-overlay {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  z-index: 1;
+}
+.player2 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 3rem 0;
+}
+.p2-overlay {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  z-index: 1;
+}
+.current {
+  background-color: #d12e64;
+  text-align: center;
+  font-size: 1.5rem;
+  width: 15rem;
+  border-radius: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+.current span {
+  font-size: 2rem;
+}
+
+.game-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-btn button {
+  font-family: 'Montserrat', sans-serif;
+  padding: 0.5rem;
+  width: 10rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.5);
+  border-color: rgba(224, 218, 218, 0.5);
+  background-color: rgba(191, 184, 184, 0.5);
+  color: #eee;
+  cursor: pointer;
+}
+
+.p1-roll,
+.p2-roll {
+  margin-bottom: 1rem;
+}
+
+.dice {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5rem;
+  height: 5rem;
+  z-index: 2;
+}
+
+.dice img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hidden Class for Reuse */
+.hidden {
+  display: none;
+}
+
+.overlay-active {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s ease-in;
+}
+.overlay-unactive {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Media Query */
+
+@media (max-width: 971px) {
+  .container {
+    position: relative;
+  }
+  .game-info-btns {
+    margin-left: 57%;
+  }
+  .new-game {
+    width: fit-content;
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+
+  .game-window {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 2rem;
+    width: 75%;
+    margin: 0;
+  }
+
+  .player1 {
+    grid-column: 1 / 1;
+    grid-row: 1 / 2;
+  }
+
+  .p1-overlay {
+    grid-column: 1 / 1;
+    grid-row: 1 / 2;
+  }
+
+  .player2 {
+    grid-column: 1 / 1;
+    grid-row: 2 / 3;
+  }
+
+  .p2-overlay {
+    grid-column: 1 / 1;
+    grid-row: 2 / 3;
+  }
+
+  .dice {
+    position: absolute;
+    top: 51.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4rem;
+    height: 4rem;
+    z-index: 2;
+  }
+}
+@media (max-width: 770px) {
+  .container {
+    position: relative;
+  }
+  .game-info-btns {
+    margin-left: 52%;
+  }
+
+  .dice {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media (max-width: 660px) {
+  .game-window {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .game-info-btns {
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+  .how-to-play {
+    width: 70%;
+  }
+}
