@@ -39,7 +39,7 @@ const diceArr = [
   'images/dice6.png',
 ];
 
-// Stage Variables
+// State Variables
 let diceRoll = 0;
 let score;
 let current = 0;
