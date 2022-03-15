@@ -294,6 +294,9 @@ body {
 }
 
 @media (max-width: 660px) {
+  .game-title h1 {
+    font-size: 2rem;
+  }
   .game-window {
     margin: 0rem;
   }
@@ -307,6 +310,9 @@ body {
 }
 
 @media (max-width: 500px) {
+  .game-title h1 {
+    font-size: 1.5rem;
+  }
   .game-window {
     margin: 0rem;
   }
@@ -333,11 +339,17 @@ body {
   }
 
   .game-info-btns {
-    margin-left: 10rem;
+    margin-bottom: 1rem;
   }
 
   .new-game {
-    font-size: 0.6rem;
+    font-size: 0.5rem;
+  }
+
+  .how-btn {
+    height: 100%;
+    align-self: end;
+    font-size: 0.8rem;
   }
 
   .how-to-play {
